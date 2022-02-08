@@ -3,6 +3,13 @@
     <h1>イラスト一覧</h1>
     <div>
       <%= link_to "イラスト投稿", new_illust_path %>
+      <% @illusts.each do |illust| %>
+        <div>
+          <%= attachment_image_tag illust, :image, :fill, 200, 200 %>
+          <%= illust.title %>
+          <%= illust.comment %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
